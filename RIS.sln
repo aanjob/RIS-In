@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RIS", "RIS\RIS.vbproj", "{E1759507-61E4-48E1-AA51-98F94EFB4A6A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupRIS", "SetupRIS\SetupRIS.vdproj", "{88F7BF7C-033F-4DF7-B1C4-D4F32381CC18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1759507-61E4-48E1-AA51-98F94EFB4A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1759507-61E4-48E1-AA51-98F94EFB4A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1759507-61E4-48E1-AA51-98F94EFB4A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1759507-61E4-48E1-AA51-98F94EFB4A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F7BF7C-033F-4DF7-B1C4-D4F32381CC18}.Debug|Any CPU.ActiveCfg = Debug
+		{88F7BF7C-033F-4DF7-B1C4-D4F32381CC18}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
