@@ -772,7 +772,7 @@ Public Class FBahan
                         x = cmSP.Parameters("@Return").Value
                         .Close()
                     End With
-                    MsgBox("MASUK 1" & x)
+
                     If x = 1 Then
                         XtraMessageBox.Show("Deskripsi Bahan Sudah Ada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Exit Sub
@@ -818,7 +818,7 @@ Public Class FBahan
                             .Close()
                         End With
                     Next
-                    MsgBox("MASUK 2" & x)
+
                     'Dim z : For z = 0 To GridView3.RowCount - 1
                     '    Dim cmSPDtl As New SqlCommand("SPInsM_DivBB")
                     '    cmSPDtl.CommandType = CommandType.StoredProcedure
@@ -842,7 +842,7 @@ Public Class FBahan
                     If Me.PGambar.Image IsNot Nothing Then
                         InsImage(Me.TBKode.EditValue, "Bahan Baku", Pic)
                     End If
-                    ''MsgBox(x)
+
                     If x = 0 Then
                         XtraMessageBox.Show("Data Berhasil Disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ElseIf x = 1 Then

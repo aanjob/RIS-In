@@ -11,6 +11,7 @@ Public Class FFilterHslProd
     Dim DsLapF As New System.Data.DataSet
     Dim CekAll, CekAll2 As Boolean
     Dim Proses As String = ""
+    Dim Line As String = ""
     Dim BOMID As String = ""
 
 #Region "Export Excel"
@@ -220,16 +221,23 @@ Public Class FFilterHslProd
                 x += 1
 
                 If x = 1 Then
-                    Proses = "'" & Me.GridView1.GetRowCellValue(i, "Proses") & Me.GridView1.GetRowCellValue(i, "Line") & "'"
+                    If Me.GridView1.GetRowCellValue(i, "Proses") = "Kirim" Then
+                        Proses = Me.GridView1.GetRowCellValue(i, "Proses")
+                        Line = Me.GridView1.GetRowCellValue(i, "Line")
+                    Else
+                        Proses = "'" & Me.GridView1.GetRowCellValue(i, "Proses") & Me.GridView1.GetRowCellValue(i, "Line") & "'"
+                    End If
+
                 Else
                     Proses &= ",'" & Me.GridView1.GetRowCellValue(i, "Proses") & Me.GridView1.GetRowCellValue(i, "Line") & "'"
                 End If
-            End If
+                End If
         Next
 
         Dim bind As New Collection
         bind = New Collection
         bind.Add(Proses, "Proses")
+        bind.Add(Line, "Line")
 
         If Me.CEPilihJam.EditValue = True Then
             bind.Add("Pilih Jam", "Jam")
@@ -397,5 +405,9 @@ Public Class FFilterHslProd
         cmsl.Fill(DsLapF, "BOML")
         DsLapF.Tables("BOML").Clear()
         cmsl.Fill(DsLapF, "BOML")
+    End Sub
+
+    Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+
     End Sub
 End Class

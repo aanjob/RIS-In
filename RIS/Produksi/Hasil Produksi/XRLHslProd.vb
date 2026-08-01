@@ -7,23 +7,57 @@ Public Class XRLHslProd
     Dim SumQty As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
 
     Public Sub InitializeData(ByVal Bind As Collection)
+        
         If Bind.Item("Jam").ToString = "Pilih Jam" Then
-            cmsl = New SqlDataAdapter("SPLHslProd", koneksi)
-            cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
-            cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
-            cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.Date).Value = CDate(MainModule.PilihAwal)
-            cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.Date).Value = CDate(MainModule.PilihAkhir)
-            cmsl.SelectCommand.Parameters.Add("@JamAw", SqlDbType.Int).Value = MainModule.PilihJamKeAw
-            cmsl.SelectCommand.Parameters.Add("@JamAkh", SqlDbType.Int).Value = MainModule.PilihJamKeAkh
-            cmsl.SelectCommand.Parameters.Add("@Shiift", SqlDbType.VarChar).Value = MainModule.PilihShift
+
+            Dim proses As String = Bind.Item("Proses").ToString
+
+
+            If {"Kirim"}.Contains(proses) Then
+                
+                cmsl = New SqlDataAdapter("SPLHslProdKirim", koneksi)
+                cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
+                cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
+                cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.Date).Value = CDate(MainModule.PilihAwal)
+                cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.Date).Value = CDate(MainModule.PilihAkhir)
+                cmsl.SelectCommand.Parameters.Add("@JamAw", SqlDbType.Int).Value = MainModule.PilihJamKeAw
+                cmsl.SelectCommand.Parameters.Add("@JamAkh", SqlDbType.Int).Value = MainModule.PilihJamKeAkh
+                cmsl.SelectCommand.Parameters.Add("@Line", SqlDbType.VarChar).Value = Bind.Item("Line").ToString
+                cmsl.SelectCommand.Parameters.Add("@Shiift", SqlDbType.VarChar).Value = MainModule.PilihShift
+            Else
+                cmsl = New SqlDataAdapter("SPLHslProd", koneksi)
+                cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
+                cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
+                cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.Date).Value = CDate(MainModule.PilihAwal)
+                cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.Date).Value = CDate(MainModule.PilihAkhir)
+                cmsl.SelectCommand.Parameters.Add("@JamAw", SqlDbType.Int).Value = MainModule.PilihJamKeAw
+                cmsl.SelectCommand.Parameters.Add("@JamAkh", SqlDbType.Int).Value = MainModule.PilihJamKeAkh
+                cmsl.SelectCommand.Parameters.Add("@Shiift", SqlDbType.VarChar).Value = MainModule.PilihShift
+
+            End If
 
             Me.LBPeriode.Text = ": " & Format(CDate(MainModule.PilihAwal), "dd MMMM yyyy") & " " & MainModule.PilihJamAw & " s/d " & Format(CDate(MainModule.PilihAkhir), "dd MMMM yyyy") & " " & MainModule.PilihJamAkh & ""
         Else
-            cmsl = New SqlDataAdapter("SPLHslProdHari", koneksi)
-            cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
-            cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
-            cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.VarChar).Value = CDate(MainModule.PilihAwal)
-            cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.VarChar).Value = CDate(MainModule.PilihAkhir)
+
+            Dim proses As String = Bind.Item("Proses").ToString
+
+
+            If {"Kirim"}.Contains(proses) Then
+
+                cmsl = New SqlDataAdapter("SPLHslProdHariKirim", koneksi)
+                cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
+                cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
+                cmsl.SelectCommand.Parameters.Add("@Line", SqlDbType.VarChar).Value = Bind.Item("Line").ToString
+                cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.VarChar).Value = CDate(MainModule.PilihAwal)
+                cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.VarChar).Value = CDate(MainModule.PilihAkhir)
+
+            Else
+                cmsl = New SqlDataAdapter("SPLHslProdHari", koneksi)
+                cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
+                cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
+                cmsl.SelectCommand.Parameters.Add("@Awal", SqlDbType.VarChar).Value = CDate(MainModule.PilihAwal)
+                cmsl.SelectCommand.Parameters.Add("@Akhir", SqlDbType.VarChar).Value = CDate(MainModule.PilihAkhir)
+            End If
 
             Me.LBPeriode.Text = ": " & Format(CDate(MainModule.PilihAwal), "dd MMMM yyyy") & " s/d " & Format(CDate(MainModule.PilihAkhir), "dd MMMM yyyy")
         End If
@@ -44,9 +78,15 @@ Public Class XRLHslProd
         Me.GHProses.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Proses", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
 
         Me.GHLine.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Line", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        If Bind.Item("Proses").ToString = "Kirim" Then
+            Me.LBProses.Text = "PROSES : " & Bind.Item("Proses").ToString
+            Me.LBLine.Text = Bind.Item("Line").ToString
+        Else
+            Me.LBProses.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.Proses", "Proses : {0}")})
+            Me.LBLine.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.Line", ": {0}")})
 
-        Me.LBProses.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.Proses", "Proses : {0}")})
-        Me.LBLine.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.Line", ": {0}")})
+        End If
+
         Me.LBBOM.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.BOMID")})
         Me.LBArtName.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.ArtName")})
         Me.LBWarna.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_HslProdDtl.Warna")})

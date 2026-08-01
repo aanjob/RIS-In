@@ -58,6 +58,7 @@ Partial Class FFilterHslProd
         Me.XtraTabControl2 = New DevExpress.XtraTab.XtraTabControl()
         Me.XTPFilter = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
@@ -80,6 +81,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XTPPreview = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl5 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
@@ -139,8 +141,6 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,6 +196,7 @@ Partial Class FFilterHslProd
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPPreview.SuspendLayout()
         CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl5.SuspendLayout()
@@ -211,7 +212,6 @@ Partial Class FFilterHslProd
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -219,26 +219,29 @@ Partial Class FFilterHslProd
         Me.LayoutControl1.Controls.Add(Me.XtraTabControl1)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(1009, 454)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1177, 559)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
         'XtraTabControl1
         '
         Me.XtraTabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.XtraTabControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XTPPros
-        Me.XtraTabControl1.Size = New System.Drawing.Size(985, 430)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(1153, 535)
         Me.XtraTabControl1.TabIndex = 4
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPPros, Me.XTPBOM})
         '
         'XTPPros
         '
         Me.XTPPros.Controls.Add(Me.LayoutControl2)
+        Me.XTPPros.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XTPPros.Name = "XTPPros"
-        Me.XTPPros.Size = New System.Drawing.Size(980, 404)
+        Me.XTPPros.Size = New System.Drawing.Size(1148, 506)
         Me.XTPPros.Text = "Per Proses"
         '
         'LayoutControl2
@@ -253,20 +256,22 @@ Partial Class FFilterHslProd
         Me.LayoutControl2.Controls.Add(Me.GridControl1)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl2.Name = "LayoutControl2"
         Me.LayoutControl2.Root = Me.LayoutControlGroup2
-        Me.LayoutControl2.Size = New System.Drawing.Size(980, 404)
+        Me.LayoutControl2.Size = New System.Drawing.Size(1148, 506)
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
         'SLUShift
         '
         Me.SLUShift.EditValue = ""
-        Me.SLUShift.Location = New System.Drawing.Point(53, 59)
+        Me.SLUShift.Location = New System.Drawing.Point(61, 60)
+        Me.SLUShift.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLUShift.Name = "SLUShift"
         Me.SLUShift.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLUShift.Properties.View = Me.GridView3
-        Me.SLUShift.Size = New System.Drawing.Size(105, 20)
+        Me.SLUShift.Size = New System.Drawing.Size(97, 22)
         Me.SLUShift.StyleController = Me.LayoutControl2
         Me.SLUShift.TabIndex = 11
         '
@@ -280,16 +285,18 @@ Partial Class FFilterHslProd
         'CEPilihJam
         '
         Me.CEPilihJam.Location = New System.Drawing.Point(12, 36)
+        Me.CEPilihJam.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CEPilihJam.Name = "CEPilihJam"
         Me.CEPilihJam.Properties.Caption = "Pilih Jam"
-        Me.CEPilihJam.Size = New System.Drawing.Size(446, 19)
+        Me.CEPilihJam.Size = New System.Drawing.Size(446, 20)
         Me.CEPilihJam.StyleController = Me.LayoutControl2
         Me.CEPilihJam.TabIndex = 10
         '
         'BPreview
         '
         Me.BPreview.Image = Global.RIS.My.Resources.Resources.Preview
-        Me.BPreview.Location = New System.Drawing.Point(382, 362)
+        Me.BPreview.Location = New System.Drawing.Point(382, 464)
+        Me.BPreview.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BPreview.Name = "BPreview"
         Me.BPreview.Size = New System.Drawing.Size(76, 30)
         Me.BPreview.StyleController = Me.LayoutControl2
@@ -299,11 +306,12 @@ Partial Class FFilterHslProd
         'SLUJamAkh
         '
         Me.SLUJamAkh.EditValue = 0
-        Me.SLUJamAkh.Location = New System.Drawing.Point(172, 83)
+        Me.SLUJamAkh.Location = New System.Drawing.Point(175, 84)
+        Me.SLUJamAkh.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLUJamAkh.Name = "SLUJamAkh"
         Me.SLUJamAkh.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLUJamAkh.Properties.View = Me.SearchLookUpEdit2View
-        Me.SLUJamAkh.Size = New System.Drawing.Size(96, 20)
+        Me.SLUJamAkh.Size = New System.Drawing.Size(93, 22)
         Me.SLUJamAkh.StyleController = Me.LayoutControl2
         Me.SLUJamAkh.TabIndex = 8
         '
@@ -317,11 +325,12 @@ Partial Class FFilterHslProd
         'SLUJamAw
         '
         Me.SLUJamAw.EditValue = 0
-        Me.SLUJamAw.Location = New System.Drawing.Point(53, 83)
+        Me.SLUJamAw.Location = New System.Drawing.Point(61, 84)
+        Me.SLUJamAw.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLUJamAw.Name = "SLUJamAw"
         Me.SLUJamAw.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLUJamAw.Properties.View = Me.SearchLookUpEdit1View
-        Me.SLUJamAw.Size = New System.Drawing.Size(95, 20)
+        Me.SLUJamAw.Size = New System.Drawing.Size(87, 22)
         Me.SLUJamAw.StyleController = Me.LayoutControl2
         Me.SLUJamAw.TabIndex = 7
         '
@@ -335,7 +344,8 @@ Partial Class FFilterHslProd
         'DTPAkhir
         '
         Me.DTPAkhir.EditValue = New Date(2021, 7, 7, 16, 29, 33, 756)
-        Me.DTPAkhir.Location = New System.Drawing.Point(222, 12)
+        Me.DTPAkhir.Location = New System.Drawing.Point(225, 12)
+        Me.DTPAkhir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DTPAkhir.Name = "DTPAkhir"
         Me.DTPAkhir.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DTPAkhir.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -345,14 +355,15 @@ Partial Class FFilterHslProd
         Me.DTPAkhir.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DTPAkhir.Properties.Mask.EditMask = "dd MMMM yyyy"
         Me.DTPAkhir.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.DTPAkhir.Size = New System.Drawing.Size(146, 20)
+        Me.DTPAkhir.Size = New System.Drawing.Size(143, 22)
         Me.DTPAkhir.StyleController = Me.LayoutControl2
         Me.DTPAkhir.TabIndex = 6
         '
         'DTPAwal
         '
         Me.DTPAwal.EditValue = New Date(2021, 7, 7, 16, 29, 33, 756)
-        Me.DTPAwal.Location = New System.Drawing.Point(53, 12)
+        Me.DTPAwal.Location = New System.Drawing.Point(61, 12)
+        Me.DTPAwal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DTPAwal.Name = "DTPAwal"
         Me.DTPAwal.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DTPAwal.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -362,7 +373,7 @@ Partial Class FFilterHslProd
         Me.DTPAwal.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DTPAwal.Properties.Mask.EditMask = "dd MMMM yyyy"
         Me.DTPAwal.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.DTPAwal.Size = New System.Drawing.Size(145, 20)
+        Me.DTPAwal.Size = New System.Drawing.Size(137, 22)
         Me.DTPAwal.StyleController = Me.LayoutControl2
         Me.DTPAwal.TabIndex = 5
         '
@@ -380,10 +391,12 @@ Partial Class FFilterHslProd
         Me.GridControl1.EmbeddedNavigator.Buttons.Prev.Visible = False
         Me.GridControl1.EmbeddedNavigator.Buttons.PrevPage.Visible = False
         Me.GridControl1.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.GridControl1.Location = New System.Drawing.Point(12, 107)
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 108)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(446, 251)
+        Me.GridControl1.Size = New System.Drawing.Size(446, 352)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -434,7 +447,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LCIJamAw, Me.LCIJamAkh, Me.ESIJam, Me.LayoutControlItem2, Me.EmptySpaceItem4, Me.EmptySpaceItem3, Me.LayoutControlItem7, Me.LayoutControlItem11, Me.LCIShift, Me.ESIShift})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(980, 404)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1148, 506)
         Me.LayoutControlGroup2.Text = "LayoutControlGroup2"
         Me.LayoutControlGroup2.TextVisible = False
         '
@@ -459,7 +472,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem3.Size = New System.Drawing.Size(190, 24)
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "Tanggal"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(38, 13)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(46, 16)
         '
         'LayoutControlItem4
         '
@@ -473,28 +486,28 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "s/d"
         Me.LayoutControlItem4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(15, 13)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(18, 16)
         Me.LayoutControlItem4.TextToControlDistance = 5
         '
         'LCIJamAw
         '
         Me.LCIJamAw.Control = Me.SLUJamAw
         Me.LCIJamAw.CustomizationFormText = "Jam"
-        Me.LCIJamAw.Location = New System.Drawing.Point(0, 71)
+        Me.LCIJamAw.Location = New System.Drawing.Point(0, 72)
         Me.LCIJamAw.MaxSize = New System.Drawing.Size(140, 24)
         Me.LCIJamAw.MinSize = New System.Drawing.Size(140, 24)
         Me.LCIJamAw.Name = "LCIJamAw"
         Me.LCIJamAw.Size = New System.Drawing.Size(140, 24)
         Me.LCIJamAw.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LCIJamAw.Text = "Jam"
-        Me.LCIJamAw.TextSize = New System.Drawing.Size(38, 13)
+        Me.LCIJamAw.TextSize = New System.Drawing.Size(46, 16)
         Me.LCIJamAw.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LCIJamAkh
         '
         Me.LCIJamAkh.Control = Me.SLUJamAkh
         Me.LCIJamAkh.CustomizationFormText = "s/d"
-        Me.LCIJamAkh.Location = New System.Drawing.Point(140, 71)
+        Me.LCIJamAkh.Location = New System.Drawing.Point(140, 72)
         Me.LCIJamAkh.MaxSize = New System.Drawing.Size(120, 24)
         Me.LCIJamAkh.MinSize = New System.Drawing.Size(120, 24)
         Me.LCIJamAkh.Name = "LCIJamAkh"
@@ -502,7 +515,7 @@ Partial Class FFilterHslProd
         Me.LCIJamAkh.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LCIJamAkh.Text = "s/d"
         Me.LCIJamAkh.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LCIJamAkh.TextSize = New System.Drawing.Size(15, 13)
+        Me.LCIJamAkh.TextSize = New System.Drawing.Size(18, 16)
         Me.LCIJamAkh.TextToControlDistance = 5
         Me.LCIJamAkh.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
@@ -510,7 +523,7 @@ Partial Class FFilterHslProd
         '
         Me.ESIJam.AllowHotTrack = False
         Me.ESIJam.CustomizationFormText = "ESIJam"
-        Me.ESIJam.Location = New System.Drawing.Point(260, 71)
+        Me.ESIJam.Location = New System.Drawing.Point(260, 72)
         Me.ESIJam.Name = "ESIJam"
         Me.ESIJam.Size = New System.Drawing.Size(190, 24)
         Me.ESIJam.Text = "ESIJam"
@@ -521,11 +534,11 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem2.Control = Me.GridControl1
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 95)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem2.MaxSize = New System.Drawing.Size(450, 0)
         Me.LayoutControlItem2.MinSize = New System.Drawing.Size(450, 24)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(450, 255)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(450, 356)
         Me.LayoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
@@ -538,7 +551,7 @@ Partial Class FFilterHslProd
         Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
         Me.EmptySpaceItem4.Location = New System.Drawing.Point(450, 0)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(510, 384)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(678, 486)
         Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -546,7 +559,7 @@ Partial Class FFilterHslProd
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 350)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 452)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(370, 34)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
@@ -556,7 +569,7 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem7.Control = Me.BPreview
         Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(370, 350)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(370, 452)
         Me.LayoutControlItem7.MaxSize = New System.Drawing.Size(80, 34)
         Me.LayoutControlItem7.MinSize = New System.Drawing.Size(80, 34)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
@@ -573,7 +586,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem11.CustomizationFormText = "LayoutControlItem11"
         Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(450, 23)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(450, 24)
         Me.LayoutControlItem11.Text = "LayoutControlItem11"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextToControlDistance = 0
@@ -583,21 +596,21 @@ Partial Class FFilterHslProd
         '
         Me.LCIShift.Control = Me.SLUShift
         Me.LCIShift.CustomizationFormText = "Shift"
-        Me.LCIShift.Location = New System.Drawing.Point(0, 47)
+        Me.LCIShift.Location = New System.Drawing.Point(0, 48)
         Me.LCIShift.MaxSize = New System.Drawing.Size(150, 24)
         Me.LCIShift.MinSize = New System.Drawing.Size(150, 24)
         Me.LCIShift.Name = "LCIShift"
         Me.LCIShift.Size = New System.Drawing.Size(150, 24)
         Me.LCIShift.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LCIShift.Text = "Shift"
-        Me.LCIShift.TextSize = New System.Drawing.Size(38, 13)
+        Me.LCIShift.TextSize = New System.Drawing.Size(46, 16)
         Me.LCIShift.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'ESIShift
         '
         Me.ESIShift.AllowHotTrack = False
         Me.ESIShift.CustomizationFormText = "ESIShift"
-        Me.ESIShift.Location = New System.Drawing.Point(150, 47)
+        Me.ESIShift.Location = New System.Drawing.Point(150, 48)
         Me.ESIShift.Name = "ESIShift"
         Me.ESIShift.Size = New System.Drawing.Size(300, 24)
         Me.ESIShift.Text = "ESIShift"
@@ -607,8 +620,9 @@ Partial Class FFilterHslProd
         'XTPBOM
         '
         Me.XTPBOM.Controls.Add(Me.LayoutControl3)
+        Me.XTPBOM.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XTPBOM.Name = "XTPBOM"
-        Me.XTPBOM.Size = New System.Drawing.Size(980, 404)
+        Me.XTPBOM.Size = New System.Drawing.Size(1148, 506)
         Me.XTPBOM.Text = "Per BOM"
         '
         'LayoutControl3
@@ -616,26 +630,29 @@ Partial Class FFilterHslProd
         Me.LayoutControl3.Controls.Add(Me.XtraTabControl2)
         Me.LayoutControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl3.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup3
-        Me.LayoutControl3.Size = New System.Drawing.Size(980, 404)
+        Me.LayoutControl3.Size = New System.Drawing.Size(1148, 506)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
         '
         'XtraTabControl2
         '
         Me.XtraTabControl2.Location = New System.Drawing.Point(12, 12)
+        Me.XtraTabControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XtraTabControl2.Name = "XtraTabControl2"
         Me.XtraTabControl2.SelectedTabPage = Me.XTPFilter
-        Me.XtraTabControl2.Size = New System.Drawing.Size(956, 380)
+        Me.XtraTabControl2.Size = New System.Drawing.Size(1124, 482)
         Me.XtraTabControl2.TabIndex = 10
         Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPFilter, Me.XTPPreview})
         '
         'XTPFilter
         '
         Me.XTPFilter.Controls.Add(Me.LayoutControl4)
+        Me.XTPFilter.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XTPFilter.Name = "XTPFilter"
-        Me.XTPFilter.Size = New System.Drawing.Size(951, 354)
+        Me.XTPFilter.Size = New System.Drawing.Size(1119, 453)
         Me.XTPFilter.Text = "Filter"
         '
         'LayoutControl4
@@ -649,18 +666,33 @@ Partial Class FFilterHslProd
         Me.LayoutControl4.Controls.Add(Me.CKALL)
         Me.LayoutControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl4.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl4.Name = "LayoutControl4"
         Me.LayoutControl4.Root = Me.LayoutControlGroup4
-        Me.LayoutControl4.Size = New System.Drawing.Size(951, 354)
+        Me.LayoutControl4.Size = New System.Drawing.Size(1119, 453)
         Me.LayoutControl4.TabIndex = 0
         Me.LayoutControl4.Text = "LayoutControl4"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.LightBlue
+        Me.Button2.Enabled = False
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(549, 12)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(194, 30)
+        Me.Button2.TabIndex = 14
+        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.Visible = False
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = Global.RIS.My.Resources.Resources.Proses
-        Me.SimpleButton1.Location = New System.Drawing.Point(322, 12)
+        Me.SimpleButton1.Location = New System.Drawing.Point(351, 12)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(158, 30)
+        Me.SimpleButton1.Size = New System.Drawing.Size(194, 30)
         Me.SimpleButton1.StyleController = Me.LayoutControl4
         Me.SimpleButton1.TabIndex = 10
         Me.SimpleButton1.Text = "Proses"
@@ -670,9 +702,10 @@ Partial Class FFilterHslProd
         Me.Button1.BackColor = System.Drawing.Color.LightBlue
         Me.Button1.Enabled = False
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(646, 12)
+        Me.Button1.Location = New System.Drawing.Point(747, 12)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(293, 30)
+        Me.Button1.Size = New System.Drawing.Size(360, 30)
         Me.Button1.TabIndex = 13
         Me.Button1.UseVisualStyleBackColor = False
         Me.Button1.Visible = False
@@ -691,10 +724,12 @@ Partial Class FFilterHslProd
         Me.GridControl3.EmbeddedNavigator.Buttons.Prev.Visible = False
         Me.GridControl3.EmbeddedNavigator.Buttons.PrevPage.Visible = False
         Me.GridControl3.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.GridControl3.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl3.Location = New System.Drawing.Point(12, 46)
         Me.GridControl3.MainView = Me.GridView2
+        Me.GridControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl3.Name = "GridControl3"
-        Me.GridControl3.Size = New System.Drawing.Size(927, 252)
+        Me.GridControl3.Size = New System.Drawing.Size(1095, 336)
         Me.GridControl3.TabIndex = 8
         Me.GridControl3.UseEmbeddedNavigator = True
         Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -774,7 +809,8 @@ Partial Class FFilterHslProd
         'BPreview2
         '
         Me.BPreview2.Image = Global.RIS.My.Resources.Resources.Preview
-        Me.BPreview2.Location = New System.Drawing.Point(863, 312)
+        Me.BPreview2.Location = New System.Drawing.Point(1031, 411)
+        Me.BPreview2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BPreview2.Name = "BPreview2"
         Me.BPreview2.Size = New System.Drawing.Size(76, 30)
         Me.BPreview2.StyleController = Me.LayoutControl4
@@ -784,7 +820,8 @@ Partial Class FFilterHslProd
         'DTPTanggal
         '
         Me.DTPTanggal.EditValue = New Date(2021, 7, 27, 15, 46, 32, 344)
-        Me.DTPTanggal.Location = New System.Drawing.Point(53, 12)
+        Me.DTPTanggal.Location = New System.Drawing.Point(61, 12)
+        Me.DTPTanggal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DTPTanggal.Name = "DTPTanggal"
         Me.DTPTanggal.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DTPTanggal.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -794,15 +831,16 @@ Partial Class FFilterHslProd
         Me.DTPTanggal.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DTPTanggal.Properties.Mask.EditMask = "dd MMMM yyyy"
         Me.DTPTanggal.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.DTPTanggal.Size = New System.Drawing.Size(135, 20)
+        Me.DTPTanggal.Size = New System.Drawing.Size(127, 22)
         Me.DTPTanggal.StyleController = Me.LayoutControl4
         Me.DTPTanggal.TabIndex = 5
         '
         'CKALL
         '
         Me.CKALL.Location = New System.Drawing.Point(192, 12)
+        Me.CKALL.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CKALL.Name = "CKALL"
-        Me.CKALL.Size = New System.Drawing.Size(126, 20)
+        Me.CKALL.Size = New System.Drawing.Size(155, 20)
         Me.CKALL.TabIndex = 12
         Me.CKALL.Text = "Semua"
         Me.CKALL.UseVisualStyleBackColor = True
@@ -815,7 +853,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.EmptySpaceItem5, Me.LayoutControlItem13, Me.EmptySpaceItem6, Me.LayoutControlItem9, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem15, Me.LayoutControlItem17})
         Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(951, 354)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(1119, 453)
         Me.LayoutControlGroup4.Text = "LayoutControlGroup4"
         Me.LayoutControlGroup4.TextVisible = False
         '
@@ -825,7 +863,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem12.CustomizationFormText = "LayoutControlItem12"
         Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 34)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(931, 256)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(1099, 340)
         Me.LayoutControlItem12.Text = "LayoutControlItem12"
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextToControlDistance = 0
@@ -835,9 +873,9 @@ Partial Class FFilterHslProd
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
         Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 300)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 399)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(851, 34)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(1019, 34)
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -845,7 +883,7 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem13.Control = Me.BPreview2
         Me.LayoutControlItem13.CustomizationFormText = "LayoutControlItem13"
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(851, 300)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(1019, 399)
         Me.LayoutControlItem13.MaxSize = New System.Drawing.Size(80, 34)
         Me.LayoutControlItem13.MinSize = New System.Drawing.Size(80, 34)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
@@ -860,9 +898,9 @@ Partial Class FFilterHslProd
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
         Me.EmptySpaceItem6.CustomizationFormText = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(0, 290)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(0, 374)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(931, 10)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(1099, 25)
         Me.EmptySpaceItem6.Text = "EmptySpaceItem6"
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -877,7 +915,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem9.Size = New System.Drawing.Size(180, 34)
         Me.LayoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem9.Text = "Tanggal"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(38, 13)
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(46, 16)
         '
         'LayoutControlItem5
         '
@@ -885,7 +923,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
         Me.LayoutControlItem5.Location = New System.Drawing.Point(180, 0)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(130, 34)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(159, 34)
         Me.LayoutControlItem5.Text = "LayoutControlItem5"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextToControlDistance = 0
@@ -895,9 +933,9 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem6.Control = Me.Button1
         Me.LayoutControlItem6.CustomizationFormText = "LayoutControlItem6"
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(634, 0)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(735, 0)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(297, 34)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(364, 34)
         Me.LayoutControlItem6.Text = "LayoutControlItem6"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem6.TextToControlDistance = 0
@@ -907,19 +945,32 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem15.Control = Me.SimpleButton1
         Me.LayoutControlItem15.CustomizationFormText = "LayoutControlItem15"
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(310, 0)
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(339, 0)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(162, 34)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(198, 34)
         Me.LayoutControlItem15.Text = "LayoutControlItem15"
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem15.TextToControlDistance = 0
         Me.LayoutControlItem15.TextVisible = False
         '
+        'LayoutControlItem17
+        '
+        Me.LayoutControlItem17.Control = Me.Button2
+        Me.LayoutControlItem17.CustomizationFormText = "LayoutControlItem17"
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(537, 0)
+        Me.LayoutControlItem17.Name = "LayoutControlItem17"
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(198, 34)
+        Me.LayoutControlItem17.Text = "LayoutControlItem17"
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem17.TextToControlDistance = 0
+        Me.LayoutControlItem17.TextVisible = False
+        '
         'XTPPreview
         '
         Me.XTPPreview.Controls.Add(Me.LayoutControl5)
+        Me.XTPPreview.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.XTPPreview.Name = "XTPPreview"
-        Me.XTPPreview.Size = New System.Drawing.Size(951, 354)
+        Me.XTPPreview.Size = New System.Drawing.Size(1114, 444)
         Me.XTPPreview.Text = "Preview"
         '
         'LayoutControl5
@@ -928,9 +979,10 @@ Partial Class FFilterHslProd
         Me.LayoutControl5.Controls.Add(Me.BExExcel)
         Me.LayoutControl5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl5.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl5.Name = "LayoutControl5"
         Me.LayoutControl5.Root = Me.LayoutControlGroup5
-        Me.LayoutControl5.Size = New System.Drawing.Size(951, 354)
+        Me.LayoutControl5.Size = New System.Drawing.Size(1114, 444)
         Me.LayoutControl5.TabIndex = 0
         Me.LayoutControl5.Text = "LayoutControl5"
         '
@@ -948,10 +1000,12 @@ Partial Class FFilterHslProd
         Me.GridControl2.EmbeddedNavigator.Buttons.Prev.Visible = False
         Me.GridControl2.EmbeddedNavigator.Buttons.PrevPage.Visible = False
         Me.GridControl2.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl2.Location = New System.Drawing.Point(12, 12)
         Me.GridControl2.MainView = Me.BandedGridView1
+        Me.GridControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(927, 296)
+        Me.GridControl2.Size = New System.Drawing.Size(1090, 386)
         Me.GridControl2.TabIndex = 4
         Me.GridControl2.UseEmbeddedNavigator = True
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.BandedGridView1})
@@ -1440,7 +1494,8 @@ Partial Class FFilterHslProd
         'BExExcel
         '
         Me.BExExcel.Image = Global.RIS.My.Resources.Resources.ExExcel
-        Me.BExExcel.Location = New System.Drawing.Point(841, 312)
+        Me.BExExcel.Location = New System.Drawing.Point(1004, 402)
+        Me.BExExcel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BExExcel.Name = "BExExcel"
         Me.BExExcel.Size = New System.Drawing.Size(98, 30)
         Me.BExExcel.StyleController = Me.LayoutControl5
@@ -1455,7 +1510,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem8, Me.EmptySpaceItem7, Me.LayoutControlItem10})
         Me.LayoutControlGroup5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup5.Name = "LayoutControlGroup5"
-        Me.LayoutControlGroup5.Size = New System.Drawing.Size(951, 354)
+        Me.LayoutControlGroup5.Size = New System.Drawing.Size(1114, 444)
         Me.LayoutControlGroup5.Text = "LayoutControlGroup5"
         Me.LayoutControlGroup5.TextVisible = False
         '
@@ -1465,7 +1520,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem8.CustomizationFormText = "LayoutControlItem8"
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(931, 300)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(1094, 390)
         Me.LayoutControlItem8.Text = "LayoutControlItem8"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem8.TextToControlDistance = 0
@@ -1475,9 +1530,9 @@ Partial Class FFilterHslProd
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(0, 300)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(0, 390)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(829, 34)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(992, 34)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -1485,7 +1540,7 @@ Partial Class FFilterHslProd
         '
         Me.LayoutControlItem10.Control = Me.BExExcel
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(829, 300)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(992, 390)
         Me.LayoutControlItem10.MaxSize = New System.Drawing.Size(102, 34)
         Me.LayoutControlItem10.MinSize = New System.Drawing.Size(102, 34)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
@@ -1504,7 +1559,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem14})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(980, 404)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1148, 506)
         Me.LayoutControlGroup3.Text = "LayoutControlGroup3"
         Me.LayoutControlGroup3.TextVisible = False
         '
@@ -1514,7 +1569,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem14.CustomizationFormText = "LayoutControlItem14"
         Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(960, 384)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(1128, 486)
         Me.LayoutControlItem14.Text = "LayoutControlItem14"
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem14.TextToControlDistance = 0
@@ -1528,7 +1583,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1009, 454)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1177, 559)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -1538,7 +1593,7 @@ Partial Class FFilterHslProd
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(989, 434)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1157, 539)
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
@@ -1565,39 +1620,16 @@ Partial Class FFilterHslProd
         Me.EmptySpaceItem8.Text = "EmptySpaceItem5"
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.LightBlue
-        Me.Button2.Enabled = False
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(484, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(158, 30)
-        Me.Button2.TabIndex = 14
-        Me.Button2.UseVisualStyleBackColor = False
-        Me.Button2.Visible = False
-        '
-        'LayoutControlItem17
-        '
-        Me.LayoutControlItem17.Control = Me.Button2
-        Me.LayoutControlItem17.CustomizationFormText = "LayoutControlItem17"
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(472, 0)
-        Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(162, 34)
-        Me.LayoutControlItem17.Text = "LayoutControlItem17"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem17.TextToControlDistance = 0
-        Me.LayoutControlItem17.TextVisible = False
-        '
         'FFilterHslProd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1009, 454)
+        Me.ClientSize = New System.Drawing.Size(1177, 559)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.LookAndFeel.SkinName = "Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "FFilterHslProd"
         Me.Text = ".: Hasil Produksi :."
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1655,6 +1687,7 @@ Partial Class FFilterHslProd
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPPreview.ResumeLayout(False)
         CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl5.ResumeLayout(False)
@@ -1670,7 +1703,6 @@ Partial Class FFilterHslProd
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

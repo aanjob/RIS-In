@@ -75,7 +75,11 @@ Public Class FHslProd_i
     Public Sub FillDt(Jam As Integer)
         Dim cmsl As SqlDataAdapter
         'cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,D.*,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef From T_HslProdDtl D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID Where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
-        cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,HslIDD,Tanggal,Proses,Line,Jam,d.Barcode,upper(BOMID) as BOMID,d.ArtCode,Qty,Batal,Tot,BtlDate,BtlBy,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef  From T_HslProdDtl D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
+        If Me.SLUProses.EditValue = "Kirim" Then
+            cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,HslIDD,Tanggal,Proses,Line,Jam,d.Barcode,upper(BOMID) as BOMID,d.ArtCode,Qty,Batal,Tot,BtlDate,BtlBy,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef  From T_HslProdDtlKirim D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
+        Else
+            cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,HslIDD,Tanggal,Proses,Line,Jam,d.Barcode,upper(BOMID) as BOMID,d.ArtCode,Qty,Batal,Tot,BtlDate,BtlBy,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef  From T_HslProdDtl D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
+        End If
 
         cmsl.TableMappings.Add("Table", "T_HslPodDtl")
         Try
@@ -224,8 +228,67 @@ Public Class FHslProd_i
                         CekDt = cmd2.ExecuteScalar()
                         .Close()
                     End With
-                    MsgBox(CekDt)
-                    If CekDt > 0 Then
+                    'Disini()
+
+
+                    If Me.SLUProses.EditValue = "Kirim" Then
+
+                        Dim cmSPDd As New SqlCommand("SPInsUpT_HslProdDtlKirim")
+                        cmSPDd.CommandType = CommandType.StoredProcedure
+                        Dim x1d As Integer
+
+                        With cmSPDd
+                            .Parameters.Add("@Tgl", SqlDbType.Date).Value = Me.DTPTanggal.EditValue
+                            .Parameters.Add("@Proses", SqlDbType.VarChar).Value = Me.SLUProses.EditValue
+                            .Parameters.Add("@Jam", SqlDbType.Int).Value = Me.SLUJam.EditValue
+                            .Parameters.Add("@Line", SqlDbType.VarChar).Value = Me.SLULine.EditValue
+                            .Parameters.Add("@Barcode", SqlDbType.VarChar).Value = Me.TBBarcode.EditValue
+                            .Parameters.Add("@BOMID", SqlDbType.VarChar).Value = strArr(0)
+                            .Parameters.Add("@ArtCode", SqlDbType.VarChar).Value = strArr(1)
+                            .Parameters.Add("@Qty", SqlDbType.Decimal).Value = Me.TBQty.EditValue
+                            '.Parameters.Add("@Isi", SqlDbType.Int).Value = 1
+                            '.Parameters.Add("@By", SqlDbType.VarChar).Value = MainModule.InisialAktif
+                            .Parameters.Add("@Return", SqlDbType.Int)
+                            .Parameters("@Return").Direction = ParameterDirection.Output
+                            .Connection = koneksi
+                            'MsgBox(Me.DTPTanggal.EditValue & " - " & Me.SLUProses.EditValue & " - " & Me.SLUJam.EditValue & " - " & Me.SLULine.EditValue & " - " & Me.TBBarcode.EditValue & " - " & strArr(0) & " " & strArr(1) & " - " & Me.TBQty.EditValue)
+                            Try
+                                With koneksi
+                                    .Open()
+                                    cmSPDd.ExecuteNonQuery()
+                                    x1d = cmSPDd.Parameters("@Return").Value
+                                    .Close()
+                                End With
+
+
+
+                                If x1d <> 0 Then
+                                    MsgBox("Salah")
+                                    FcMsgBox("Data Gagal Disimpan", "Error", MessageBoxIcon.Error)
+                                    Exit Sub
+                                End If
+
+                            Catch ex As Exception
+                                MsgBox("Salah2")
+                                FcMsgBox("Data Gagal Disimpan", "Error", MessageBoxIcon.Error)
+                                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                Exit Sub
+                            End Try
+                        End With
+
+                        Me.TBBarcode.EditValue = ""
+                        Me.TBQty.EditValue = 0
+
+                        FillDt(Me.SLUJam.EditValue)
+                    End If
+
+
+                    ' Disini()
+
+
+
+
+                    If CekDt > 0 AndAlso Me.SLUProses.EditValue <> "Kirim" Then
                         Dim cmd1 As New SqlCommand("Select Isnull((Select Sum(Masuk)-Sum(Keluar)-" & Me.TBQty.EditValue & " From T_StokProses Where Proses='" & Me.SLUProses.EditValue & "' and BOMID='" & strArr(0) & "' and ArtCode='" & strArr(1) & "'),-" & Me.TBQty.EditValue & ")", koneksi)
 
                         koneksi.Close()
@@ -235,7 +298,7 @@ Public Class FHslProd_i
                             Saldo = cmd1.ExecuteScalar()
                             .Close()
                         End With
-                        MsgBox(Saldo)
+
                         If Saldo < 0 Then
                             FcMsgBox("Saldo Melebihi Saldo Proses/SPK", "Error", MessageBoxIcon.Error)
                             Exit Sub
@@ -272,8 +335,13 @@ Public Class FHslProd_i
                                 Exit Sub
                             End If
                         Else
-                            FcMsgBox("Proses Pertama Belum Ada Saldo", "Error", MessageBoxIcon.Error)
-                            Exit Sub
+                            If Me.SLUProses.EditValue <> "Kirim" Then
+                                FcMsgBox("Proses Pertama Belum Ada Saldo", "Error", MessageBoxIcon.Error)
+                                Exit Sub
+                            Else
+                                FcMsgBox("Kirim Berhasil Masuk", "Error", MessageBoxIcon.Information)
+                                Exit Sub
+                            End If
 
                         End If
                     End If

@@ -109,27 +109,30 @@ Partial Class FHslProd_i
         Me.LayoutControl1.Controls.Add(Me.SLUProses)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(994, 478)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1160, 588)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
         'TBQty
         '
         Me.TBQty.EditValue = ""
-        Me.TBQty.Location = New System.Drawing.Point(98, 114)
+        Me.TBQty.Location = New System.Drawing.Point(117, 114)
+        Me.TBQty.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TBQty.Name = "TBQty"
         Me.TBQty.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.TBQty.Properties.Appearance.Options.UseFont = True
-        Me.TBQty.Size = New System.Drawing.Size(160, 30)
+        Me.TBQty.Size = New System.Drawing.Size(141, 36)
         Me.TBQty.StyleController = Me.LayoutControl1
         Me.TBQty.TabIndex = 22
         '
         'SLULine
         '
         Me.SLULine.EditValue = 0
-        Me.SLULine.Location = New System.Drawing.Point(559, 46)
+        Me.SLULine.Location = New System.Drawing.Point(570, 46)
+        Me.SLULine.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLULine.Name = "SLULine"
         Me.SLULine.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.SLULine.Properties.Appearance.Options.UseFont = True
@@ -140,7 +143,7 @@ Partial Class FHslProd_i
         Me.SLULine.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.SLULine.Properties.ReadOnly = True
         Me.SLULine.Properties.View = Me.GridView3
-        Me.SLULine.Size = New System.Drawing.Size(109, 30)
+        Me.SLULine.Size = New System.Drawing.Size(98, 36)
         Me.SLULine.StyleController = Me.LayoutControl1
         Me.SLULine.TabIndex = 24
         '
@@ -165,10 +168,12 @@ Partial Class FHslProd_i
         Me.GridControl1.EmbeddedNavigator.Buttons.Prev.Visible = False
         Me.GridControl1.EmbeddedNavigator.Buttons.PrevPage.Visible = False
         Me.GridControl1.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Location = New System.Drawing.Point(12, 148)
         Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(970, 318)
+        Me.GridControl1.Size = New System.Drawing.Size(1136, 428)
         Me.GridControl1.TabIndex = 7
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -396,18 +401,20 @@ Partial Class FHslProd_i
         'TBBarcode
         '
         Me.TBBarcode.EditValue = ""
-        Me.TBBarcode.Location = New System.Drawing.Point(98, 80)
+        Me.TBBarcode.Location = New System.Drawing.Point(117, 80)
+        Me.TBBarcode.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TBBarcode.Name = "TBBarcode"
         Me.TBBarcode.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.TBBarcode.Properties.Appearance.Options.UseFont = True
-        Me.TBBarcode.Size = New System.Drawing.Size(560, 30)
+        Me.TBBarcode.Size = New System.Drawing.Size(541, 36)
         Me.TBBarcode.StyleController = Me.LayoutControl1
         Me.TBBarcode.TabIndex = 21
         '
         'SLUJam
         '
         Me.SLUJam.EditValue = 0
-        Me.SLUJam.Location = New System.Drawing.Point(558, 12)
+        Me.SLUJam.Location = New System.Drawing.Point(569, 12)
+        Me.SLUJam.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLUJam.Name = "SLUJam"
         Me.SLUJam.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.SLUJam.Properties.Appearance.Options.UseFont = True
@@ -418,7 +425,7 @@ Partial Class FHslProd_i
         Me.SLUJam.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.SLUJam.Properties.ReadOnly = True
         Me.SLUJam.Properties.View = Me.GridView2
-        Me.SLUJam.Size = New System.Drawing.Size(110, 30)
+        Me.SLUJam.Size = New System.Drawing.Size(99, 36)
         Me.SLUJam.StyleController = Me.LayoutControl1
         Me.SLUJam.TabIndex = 23
         '
@@ -457,7 +464,8 @@ Partial Class FHslProd_i
         'DTPTanggal
         '
         Me.DTPTanggal.EditValue = New Date(2021, 6, 7, 16, 28, 23, 126)
-        Me.DTPTanggal.Location = New System.Drawing.Point(98, 12)
+        Me.DTPTanggal.Location = New System.Drawing.Point(117, 12)
+        Me.DTPTanggal.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DTPTanggal.Name = "DTPTanggal"
         Me.DTPTanggal.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.DTPTanggal.Properties.Appearance.Options.UseFont = True
@@ -470,21 +478,22 @@ Partial Class FHslProd_i
         Me.DTPTanggal.Properties.Mask.EditMask = "dd MMMM yyyy"
         Me.DTPTanggal.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.DTPTanggal.Properties.ReadOnly = True
-        Me.DTPTanggal.Size = New System.Drawing.Size(260, 30)
+        Me.DTPTanggal.Size = New System.Drawing.Size(241, 36)
         Me.DTPTanggal.StyleController = Me.LayoutControl1
         Me.DTPTanggal.TabIndex = 20
         '
         'SLUProses
         '
         Me.SLUProses.EditValue = ""
-        Me.SLUProses.Location = New System.Drawing.Point(98, 46)
+        Me.SLUProses.Location = New System.Drawing.Point(117, 46)
+        Me.SLUProses.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SLUProses.Name = "SLUProses"
         Me.SLUProses.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold)
         Me.SLUProses.Properties.Appearance.Options.UseFont = True
         Me.SLUProses.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLUProses.Properties.ReadOnly = True
         Me.SLUProses.Properties.View = Me.SearchLookUpEdit1View
-        Me.SLUProses.Size = New System.Drawing.Size(360, 30)
+        Me.SLUProses.Size = New System.Drawing.Size(341, 36)
         Me.SLUProses.StyleController = Me.LayoutControl1
         Me.SLUProses.TabIndex = 22
         '
@@ -503,7 +512,7 @@ Partial Class FHslProd_i
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.ESIJam, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem7, Me.EmptySpaceItem3})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(994, 478)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1160, 588)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -520,7 +529,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem1.Size = New System.Drawing.Size(350, 34)
         Me.LayoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem1.Text = "Tanggal"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(83, 24)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(102, 30)
         '
         'LayoutControlItem2
         '
@@ -535,7 +544,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem2.Size = New System.Drawing.Size(450, 34)
         Me.LayoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem2.Text = "Proses"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(83, 24)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(102, 30)
         '
         'LayoutControlItem4
         '
@@ -550,7 +559,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem4.Size = New System.Drawing.Size(650, 34)
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "Barcode"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(83, 24)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 30)
         '
         'LayoutControlItem5
         '
@@ -558,7 +567,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 136)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(974, 322)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(1140, 432)
         Me.LayoutControlItem5.Text = "LayoutControlItem5"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextToControlDistance = 0
@@ -591,7 +600,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "Jam"
         Me.LayoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(41, 24)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(52, 30)
         Me.LayoutControlItem3.TextToControlDistance = 5
         '
         'ESIJam
@@ -602,9 +611,9 @@ Partial Class FHslProd_i
         Me.ESIJam.CustomizationFormText = " "
         Me.ESIJam.Location = New System.Drawing.Point(660, 0)
         Me.ESIJam.Name = "ESIJam"
-        Me.ESIJam.Size = New System.Drawing.Size(314, 34)
+        Me.ESIJam.Size = New System.Drawing.Size(480, 34)
         Me.ESIJam.Text = " "
-        Me.ESIJam.TextSize = New System.Drawing.Size(83, 0)
+        Me.ESIJam.TextSize = New System.Drawing.Size(102, 0)
         Me.ESIJam.TextVisible = True
         '
         'LayoutControlItem6
@@ -621,7 +630,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Line"
         Me.LayoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(42, 24)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(53, 30)
         Me.LayoutControlItem6.TextToControlDistance = 5
         '
         'EmptySpaceItem2
@@ -643,7 +652,7 @@ Partial Class FHslProd_i
         Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
         Me.EmptySpaceItem4.Location = New System.Drawing.Point(660, 34)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(314, 34)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(480, 34)
         Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -653,7 +662,7 @@ Partial Class FHslProd_i
         Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
         Me.EmptySpaceItem5.Location = New System.Drawing.Point(650, 68)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(324, 34)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(490, 34)
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -670,7 +679,7 @@ Partial Class FHslProd_i
         Me.LayoutControlItem7.Size = New System.Drawing.Size(250, 34)
         Me.LayoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem7.Text = "Qty"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(83, 24)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(102, 30)
         '
         'EmptySpaceItem3
         '
@@ -678,19 +687,20 @@ Partial Class FHslProd_i
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Location = New System.Drawing.Point(250, 102)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(724, 34)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(890, 34)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'FHslProd_i
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(994, 478)
+        Me.ClientSize = New System.Drawing.Size(1160, 588)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.LookAndFeel.SkinName = "Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "FHslProd_i"
         Me.Text = ".: Hasil Produksi :."
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()

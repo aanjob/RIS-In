@@ -921,7 +921,7 @@ Public Class FCust
     End Sub
 
     Private Sub BExExcel_Click(sender As Object, e As EventArgs) Handles BExExcel.Click
-        Dim fileName As String = ShowSaveFileDialog("Microsoft Excel Document", "Microsoft Excel|*.xls", "Lap Master Customer RIS")
+        Dim fileName As String = ShowSaveFileDialog("Microsoft Excel Document", "Microsoft Excel|*.xls", "Lap Master Customer Per Tanggal " & Format(Me.DTPTanggal.EditValue, "dd-MM-yy") & "")
         If fileName <> "" Then
             ExportTo(New ExportXlsProvider(fileName))
             OpenFile(fileName)

@@ -97,7 +97,7 @@ Public Class XRPOBB
 
         Me.LBTotQty.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_POBBDtl.Qty", "{0:#,##0.##}")})
         SumQty.FormatString = "{0:#,##0.##}"
-        SumQty.Running = DevExpress.XtraReports.UI.SummaryRunning.Page
+        SumQty.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
         Me.LBTotQty.Summary = SumQty
 
         If MainModule.PrintDt = "False" Then

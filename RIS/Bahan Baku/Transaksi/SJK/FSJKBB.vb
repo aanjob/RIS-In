@@ -507,11 +507,6 @@ Public Class FSJKBB
             .Parameters("@Return").Direction = ParameterDirection.Output
             .Connection = koneksi
 
-            'MsgBox(Me.GridView2.GetFocusedDataRow.Item("SJKID"))
-            'MsgBox(Me.GridView2.GetFocusedDataRow.Item("Tanggal"))
-            'MsgBox(Me.GridView2.GetFocusedDataRow.Item("Gol"))
-            'MsgBox(Me.GridView2.GetFocusedDataRow.Item("TipePPn"))
-
             Try
                 With koneksi
                     .Open()
@@ -519,7 +514,7 @@ Public Class FSJKBB
                     x = cmSP.Parameters("@Return").Value
                     .Close()
                 End With
-                'MsgBox(x)
+
                 If x = 0 Then
                     XtraMessageBox.Show("Data Berhasil Diapprove", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     FillDt()

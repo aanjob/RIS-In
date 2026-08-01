@@ -21,6 +21,7 @@ Partial Public Class XRPOBB
     Private Sub InitializeComponent()
         Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(XRPOBB))
+        Dim XrSummary2 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.LBQty = New DevExpress.XtraReports.UI.XRLabel()
         Me.LBSatuan = New DevExpress.XtraReports.UI.XRLabel()
@@ -77,8 +78,8 @@ Partial Public Class XRPOBB
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.LBUser = New DevExpress.XtraReports.UI.XRLabel()
         Me.LBTotQty = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.LBPerusahaan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LBAlamat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LBKet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -672,19 +673,10 @@ Partial Public Class XRPOBB
         Me.LBTotQty.SizeF = New System.Drawing.SizeF(214.3125!, 45.19093!)
         Me.LBTotQty.StylePriority.UseFont = False
         Me.LBTotQty.StylePriority.UseTextAlignment = False
+        XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
+        Me.LBTotQty.Summary = XrSummary2
         Me.LBTotQty.Text = "Qty"
         Me.LBTotQty.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
-        '
-        'XrLabel3
-        '
-        Me.XrLabel3.Dpi = 254.0!
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(1051.68!, 3.999998!)
-        Me.XrLabel3.Name = "XrLabel3"
-        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(184.2281!, 45.19092!)
-        Me.XrLabel3.StylePriority.UseTextAlignment = False
-        Me.XrLabel3.Text = "Total Qty :"
-        Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
         '
         'ReportFooter
         '
@@ -692,6 +684,17 @@ Partial Public Class XRPOBB
         Me.ReportFooter.HeightF = 55.19093!
         Me.ReportFooter.Name = "ReportFooter"
         Me.ReportFooter.PrintAtBottom = True
+        '
+        'XrLabel3
+        '
+        Me.XrLabel3.Dpi = 254.0!
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(1051.68!, 5.000018!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(184.2281!, 45.19092!)
+        Me.XrLabel3.StylePriority.UseTextAlignment = False
+        Me.XrLabel3.Text = "Total Qty :"
+        Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
         '
         'XRPOBB
         '
