@@ -452,114 +452,228 @@ Public Class FHslProd_i
 
     Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
         koneksi.Close()
-
-        If e.Column Is GridView1.Columns("Qty") Then
-
-            Me.GridView1.SetRowCellValue(e.RowHandle, "Tot", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") - Me.GridView1.GetRowCellValue(e.RowHandle, "Batal"))
-
-        ElseIf e.Column Is GridView1.Columns("Batal") Then
-
-            If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
-                If Me.GridView1.GetRowCellValue(e.RowHandle, "Batal") > Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") Then
-                    FcMsgBox("Batal Tidak Boleh Melebihi Qty", "Error", MessageBoxIcon.Error)
-                    Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty"))
-                End If
-
-                Dim CekPros As Integer
-                Dim command As New SqlCommand("Select dbo.fcCekBtlProd('" & Me.GridView1.GetFocusedRowCellValue("BOMID") & "','" & Me.SLUProses.EditValue & "','" & Me.GridView1.GetFocusedRowCellValue("ArtCode") & "','" & Me.GridView1.GetFocusedRowCellValue("Batal") & "','" & Me.SLUJam.EditValue & "','" & Me.DTPTanggal.EditValue & "')", koneksi)
-
-                With koneksi
-                    .Open()
-                    command.CommandTimeout = 9000
-                    CekPros = command.ExecuteScalar()
-                    .Close()
-                End With
-
-                If CekPros > 0 Then
-
-                    FcMsgBox("Proses Selanjutnya Ada yang Minus Atau Melebihi Proses Sebelumnya. Silakan Cek Hasil Produksi", "Error", MessageBoxIcon.Error)
-
-                    RemoveHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
-
-                    Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "BtlBef"))
-
-                    AddHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
-
-                    FillDt(Me.SLUJam.EditValue)
-
-                    Exit Sub
-                Else
-                    Dim cmSPDtl As New SqlCommand("SPUpT_HslProdDtl")
-                    cmSPDtl.CommandType = CommandType.StoredProcedure
-                    Dim x As Integer
-
-                    With cmSPDtl
-                        .Parameters.Add("@Id", SqlDbType.Int).Value = Me.GridView1.GetFocusedRowCellValue("HslIDD")
-                        .Parameters.Add("@Tgl", SqlDbType.DateTime).Value = Me.DTPTanggal.EditValue
-                        .Parameters.Add("@Proses", SqlDbType.VarChar).Value = Me.SLUProses.EditValue
-                        .Parameters.Add("@Jam", SqlDbType.Int).Value = Me.SLUJam.EditValue
-                        .Parameters.Add("@Line", SqlDbType.VarChar).Value = Me.SLULine.EditValue
-                        .Parameters.Add("@BOMID", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("BOMID")
-                        .Parameters.Add("@Barcode", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("Barcode")
-                        .Parameters.Add("@Batal", SqlDbType.Decimal).Value = Me.GridView1.GetFocusedRowCellValue("Batal")
-                        .Parameters.Add("@By", SqlDbType.VarChar).Value = MainModule.InisialAktifBtl
-                        .Parameters.Add("@Return", SqlDbType.Int)
-                        .Parameters("@Return").Direction = ParameterDirection.Output
-                        .Connection = koneksi
-                    End With
-
-                    With koneksi
-                        .Open()
-                        cmSPDtl.ExecuteNonQuery()
-                        x = cmSPDtl.Parameters("@Return").Value
-                        .Close()
-                    End With
-
-                    If x = 0 Then
-                        FcMsgBox("Data Berhasil Diubah", "Informasi", MessageBoxIcon.Information)
-                    Else
-                        FcMsgBox("Data Gagal Disimpan", "Error", MessageBoxIcon.Error)
-                        FillDt(Me.SLUJam.EditValue)
-                        Exit Sub
-                    End If
-                End If
-
-                Dim cmds As New SqlCommand("SPAftSScanBrcd")
-                cmds.CommandType = CommandType.StoredProcedure
-
-                With cmds
-                    .Connection = koneksi
-
-                    With koneksi
-                        .Open()
-                        cmds.ExecuteNonQuery()
-                        .Close()
-                    End With
-
-                End With
-
-                FillDt(Me.SLUJam.EditValue)
+        '        'update alam
+        If Me.SLUProses.EditValue = "Kirim" OrElse Me.SLUProses.EditValue = "Terima" Then
+            'update alam
+            If e.Column Is GridView1.Columns("Qty") Then
 
                 Me.GridView1.SetRowCellValue(e.RowHandle, "Tot", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") - Me.GridView1.GetRowCellValue(e.RowHandle, "Batal"))
 
-                Me.GridView1.SetRowCellValue(e.RowHandle, "Cek", False)
+            ElseIf e.Column Is GridView1.Columns("Batal") Then
 
-                Me.GridView1.Columns("Cek").Visible = False
-                Me.GridView1.Columns("Cek").OptionsColumn.AllowEdit = False
+                If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
+                    If Me.GridView1.GetRowCellValue(e.RowHandle, "Batal") > Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") Then
+                        FcMsgBox("Batal Tidak Boleh Melebihi Qty", "Error", MessageBoxIcon.Error)
+                        Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty"))
+                    End If
+
+                    Dim CekPros As Integer
+                   
+                    CekPros = 0
+                    If CekPros > 0 Then
+
+                        FcMsgBox("Proses Selanjutnya Ada yang Minus Atau Melebihi Proses Sebelumnya. Silakan Cek Hasil Produksi", "Error", MessageBoxIcon.Error)
+
+                        RemoveHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
+
+                        Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "BtlBef"))
+
+                        AddHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
+
+                        FillDt(Me.SLUJam.EditValue)
+
+                        Exit Sub
+                    Else
+                        Dim cmSPDtl As New SqlCommand("SPUpT_HslProdDtlKirim")
+                        cmSPDtl.CommandType = CommandType.StoredProcedure
+                        Dim x As Integer
+
+                        With cmSPDtl
+                            .Parameters.Add("@Id", SqlDbType.Int).Value = Me.GridView1.GetFocusedRowCellValue("HslIDD")
+                            .Parameters.Add("@Tgl", SqlDbType.DateTime).Value = Me.DTPTanggal.EditValue
+                            .Parameters.Add("@Proses", SqlDbType.VarChar).Value = Me.SLUProses.EditValue
+                            .Parameters.Add("@Jam", SqlDbType.Int).Value = Me.SLUJam.EditValue
+                            .Parameters.Add("@Line", SqlDbType.VarChar).Value = Me.SLULine.EditValue
+                            .Parameters.Add("@BOMID", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("BOMID")
+                            .Parameters.Add("@Barcode", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("Barcode")
+                            .Parameters.Add("@Batal", SqlDbType.Decimal).Value = Me.GridView1.GetFocusedRowCellValue("Batal")
+                            .Parameters.Add("@By", SqlDbType.VarChar).Value = MainModule.InisialAktifBtl
+                            .Parameters.Add("@Return", SqlDbType.Int)
+                            .Parameters("@Return").Direction = ParameterDirection.Output
+                            .Connection = koneksi
+                        End With
+
+                        With koneksi
+                            .Open()
+                            cmSPDtl.ExecuteNonQuery()
+                            x = cmSPDtl.Parameters("@Return").Value
+                            .Close()
+                        End With
+
+                        If x = 0 Then
+                            FcMsgBox("Data Berhasil Diubah", "Informasi", MessageBoxIcon.Information)
+                        Else
+                            FcMsgBox("Data Gagal Disimpan", "Error", MessageBoxIcon.Error)
+                            FillDt(Me.SLUJam.EditValue)
+                            Exit Sub
+                        End If
+                    End If
+
+                    Dim cmds As New SqlCommand("SPAftSScanBrcd")
+                    cmds.CommandType = CommandType.StoredProcedure
+
+                    With cmds
+                        .Connection = koneksi
+
+                        With koneksi
+                            .Open()
+                            cmds.ExecuteNonQuery()
+                            .Close()
+                        End With
+
+                    End With
+
+                    FillDt(Me.SLUJam.EditValue)
+
+                    Me.GridView1.SetRowCellValue(e.RowHandle, "Tot", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") - Me.GridView1.GetRowCellValue(e.RowHandle, "Batal"))
+
+                    Me.GridView1.SetRowCellValue(e.RowHandle, "Cek", False)
+
+                    Me.GridView1.Columns("Cek").Visible = False
+                    Me.GridView1.Columns("Cek").OptionsColumn.AllowEdit = False
+                End If
+
+                Me.TBBarcode.Focus()
+
+            ElseIf e.Column Is GridView1.Columns("Cek") Then
+
+                If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
+                    Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = True
+
+                Else
+                    Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = False
+
+                End If
             End If
 
-            Me.TBBarcode.Focus()
+            'update alam
+        Else
+            'update alam
 
-        ElseIf e.Column Is GridView1.Columns("Cek") Then
+            If e.Column Is GridView1.Columns("Qty") Then
 
-            If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
-                Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = True
+                Me.GridView1.SetRowCellValue(e.RowHandle, "Tot", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") - Me.GridView1.GetRowCellValue(e.RowHandle, "Batal"))
 
-            Else
-                Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = False
+            ElseIf e.Column Is GridView1.Columns("Batal") Then
 
+                If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
+                    If Me.GridView1.GetRowCellValue(e.RowHandle, "Batal") > Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") Then
+                        FcMsgBox("Batal Tidak Boleh Melebihi Qty", "Error", MessageBoxIcon.Error)
+                        Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty"))
+                    End If
+
+                    Dim CekPros As Integer
+                    Dim command As New SqlCommand("Select dbo.fcCekBtlProd('" & Me.GridView1.GetFocusedRowCellValue("BOMID") & "','" & Me.SLUProses.EditValue & "','" & Me.GridView1.GetFocusedRowCellValue("ArtCode") & "','" & Me.GridView1.GetFocusedRowCellValue("Batal") & "','" & Me.SLUJam.EditValue & "','" & Me.DTPTanggal.EditValue & "')", koneksi)
+
+                    With koneksi
+                        .Open()
+                        command.CommandTimeout = 9000
+                        CekPros = command.ExecuteScalar()
+                        .Close()
+                    End With
+
+                    If CekPros > 0 Then
+
+                        FcMsgBox("Proses Selanjutnya Ada yang Minus Atau Melebihi Proses Sebelumnya. Silakan Cek Hasil Produksi", "Error", MessageBoxIcon.Error)
+
+                        RemoveHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
+
+                        Me.GridView1.SetRowCellValue(e.RowHandle, "Batal", Me.GridView1.GetRowCellValue(e.RowHandle, "BtlBef"))
+
+                        AddHandler GridView1.CellValueChanged, AddressOf GridView1_CellValueChanged
+
+                        FillDt(Me.SLUJam.EditValue)
+
+                        Exit Sub
+                    Else
+                        Dim cmSPDtl As New SqlCommand("SPUpT_HslProdDtl")
+                        cmSPDtl.CommandType = CommandType.StoredProcedure
+                        Dim x As Integer
+
+                        With cmSPDtl
+                            .Parameters.Add("@Id", SqlDbType.Int).Value = Me.GridView1.GetFocusedRowCellValue("HslIDD")
+                            .Parameters.Add("@Tgl", SqlDbType.DateTime).Value = Me.DTPTanggal.EditValue
+                            .Parameters.Add("@Proses", SqlDbType.VarChar).Value = Me.SLUProses.EditValue
+                            .Parameters.Add("@Jam", SqlDbType.Int).Value = Me.SLUJam.EditValue
+                            .Parameters.Add("@Line", SqlDbType.VarChar).Value = Me.SLULine.EditValue
+                            .Parameters.Add("@BOMID", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("BOMID")
+                            .Parameters.Add("@Barcode", SqlDbType.VarChar).Value = Me.GridView1.GetFocusedRowCellValue("Barcode")
+                            .Parameters.Add("@Batal", SqlDbType.Decimal).Value = Me.GridView1.GetFocusedRowCellValue("Batal")
+                            .Parameters.Add("@By", SqlDbType.VarChar).Value = MainModule.InisialAktifBtl
+                            .Parameters.Add("@Return", SqlDbType.Int)
+                            .Parameters("@Return").Direction = ParameterDirection.Output
+                            .Connection = koneksi
+                        End With
+
+                        With koneksi
+                            .Open()
+                            cmSPDtl.ExecuteNonQuery()
+                            x = cmSPDtl.Parameters("@Return").Value
+                            .Close()
+                        End With
+
+                        If x = 0 Then
+                            FcMsgBox("Data Berhasil Diubah", "Informasi", MessageBoxIcon.Information)
+                        Else
+                            FcMsgBox("Data Gagal Disimpan", "Error", MessageBoxIcon.Error)
+                            FillDt(Me.SLUJam.EditValue)
+                            Exit Sub
+                        End If
+                    End If
+
+                    Dim cmds As New SqlCommand("SPAftSScanBrcd")
+                    cmds.CommandType = CommandType.StoredProcedure
+
+                    With cmds
+                        .Connection = koneksi
+
+                        With koneksi
+                            .Open()
+                            cmds.ExecuteNonQuery()
+                            .Close()
+                        End With
+
+                    End With
+
+                    FillDt(Me.SLUJam.EditValue)
+
+                    Me.GridView1.SetRowCellValue(e.RowHandle, "Tot", Me.GridView1.GetRowCellValue(e.RowHandle, "Qty") - Me.GridView1.GetRowCellValue(e.RowHandle, "Batal"))
+
+                    Me.GridView1.SetRowCellValue(e.RowHandle, "Cek", False)
+
+                    Me.GridView1.Columns("Cek").Visible = False
+                    Me.GridView1.Columns("Cek").OptionsColumn.AllowEdit = False
+                End If
+
+                Me.TBBarcode.Focus()
+
+            ElseIf e.Column Is GridView1.Columns("Cek") Then
+
+                If Me.GridView1.GetFocusedRowCellValue("Cek") = True Then
+                    Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = True
+
+                Else
+                    Me.GridView1.Columns("Batal").OptionsColumn.AllowEdit = False
+
+                End If
             End If
+
+
+            'update alam
         End If
+        'update alam
+
+       
     End Sub
 
     Private Sub GridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles GridView1.KeyDown
@@ -652,4 +766,7 @@ Public Class FHslProd_i
         End Try
     End Sub
 
+    Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+
+    End Sub
 End Class
