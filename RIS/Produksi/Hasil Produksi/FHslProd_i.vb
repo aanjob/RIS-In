@@ -75,7 +75,7 @@ Public Class FHslProd_i
     Public Sub FillDt(Jam As Integer)
         Dim cmsl As SqlDataAdapter
         'cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,D.*,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef From T_HslProdDtl D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID Where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
-        If Me.SLUProses.EditValue = "Kirim" Then
+        If Me.SLUProses.EditValue = "Kirim" OrElse Me.SLUProses.EditValue = "Terima" Then
             cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,HslIDD,Tanggal,Proses,Line,Jam,d.Barcode,upper(BOMID) as BOMID,d.ArtCode,Qty,Batal,Tot,BtlDate,BtlBy,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef  From T_HslProdDtlKirim D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
         Else
             cmsl = New SqlDataAdapter("Select convert(bit,'FALSE') as Cek,HslIDD,Tanggal,Proses,Line,Jam,d.Barcode,upper(BOMID) as BOMID,d.ArtCode,Qty,Batal,Tot,BtlDate,BtlBy,ArtName,W.Nama As Warna,Ass,SatID,Isi,Batal As BtlBef  From T_HslProdDtl D Inner Join M_Brg B On D.ArtCode=B.ArtCode Inner Join M_BrgWrn W On B.WrnID=W.WrnID where Tanggal='" & Me.DTPTanggal.EditValue & "' and Proses='" & Me.SLUProses.EditValue & "' and Line='" & Me.SLULine.EditValue & "' and Jam=" & Jam & "", koneksi)
@@ -231,7 +231,7 @@ Public Class FHslProd_i
                     'Disini()
 
 
-                    If Me.SLUProses.EditValue = "Kirim" Then
+                    If Me.SLUProses.EditValue = "Kirim" OrElse Me.SLUProses.EditValue = "Terima" Then
 
                         Dim cmSPDd As New SqlCommand("SPInsUpT_HslProdDtlKirim")
                         cmSPDd.CommandType = CommandType.StoredProcedure
@@ -288,7 +288,7 @@ Public Class FHslProd_i
 
 
 
-                    If CekDt > 0 AndAlso Me.SLUProses.EditValue <> "Kirim" Then
+                    If CekDt > 0 AndAlso Me.SLUProses.EditValue <> "Kirim" AndAlso Me.SLUProses.EditValue <> "Terima" Then
                         Dim cmd1 As New SqlCommand("Select Isnull((Select Sum(Masuk)-Sum(Keluar)-" & Me.TBQty.EditValue & " From T_StokProses Where Proses='" & Me.SLUProses.EditValue & "' and BOMID='" & strArr(0) & "' and ArtCode='" & strArr(1) & "'),-" & Me.TBQty.EditValue & ")", koneksi)
 
                         koneksi.Close()
@@ -335,11 +335,11 @@ Public Class FHslProd_i
                                 Exit Sub
                             End If
                         Else
-                            If Me.SLUProses.EditValue <> "Kirim" Then
+                            If Me.SLUProses.EditValue <> "Kirim" OrElse Me.SLUProses.EditValue <> "Terima" Then
                                 FcMsgBox("Proses Pertama Belum Ada Saldo", "Error", MessageBoxIcon.Error)
                                 Exit Sub
                             Else
-                                FcMsgBox("Kirim Berhasil Masuk", "Error", MessageBoxIcon.Information)
+                                FcMsgBox("Berhasil Masuk", "Error", MessageBoxIcon.Information)
                                 Exit Sub
                             End If
 

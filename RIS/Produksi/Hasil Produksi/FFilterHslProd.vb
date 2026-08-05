@@ -221,7 +221,7 @@ Public Class FFilterHslProd
                 x += 1
 
                 If x = 1 Then
-                    If Me.GridView1.GetRowCellValue(i, "Proses") = "Kirim" Then
+                    If Me.GridView1.GetRowCellValue(i, "Proses") = "Kirim" OrElse Me.GridView1.GetRowCellValue(i, "Proses") = "Terima" Then
                         Proses = Me.GridView1.GetRowCellValue(i, "Proses")
                         Line = Me.GridView1.GetRowCellValue(i, "Line")
                     Else

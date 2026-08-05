@@ -13,8 +13,8 @@ Public Class XRLHslProd
             Dim proses As String = Bind.Item("Proses").ToString
 
 
-            If {"Kirim"}.Contains(proses) Then
-                
+            If {"Kirim"}.Contains(proses) OrElse {"Terima"}.Contains(proses) Then
+
                 cmsl = New SqlDataAdapter("SPLHslProdKirim", koneksi)
                 cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
                 cmsl.SelectCommand.Parameters.Add("@Proses", SqlDbType.VarChar).Value = Bind.Item("Proses").ToString
@@ -42,7 +42,7 @@ Public Class XRLHslProd
             Dim proses As String = Bind.Item("Proses").ToString
 
 
-            If {"Kirim"}.Contains(proses) Then
+            If {"Kirim"}.Contains(proses) OrElse {"Terima"}.Contains(proses) Then
 
                 cmsl = New SqlDataAdapter("SPLHslProdHariKirim", koneksi)
                 cmsl.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -78,7 +78,7 @@ Public Class XRLHslProd
         Me.GHProses.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Proses", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
 
         Me.GHLine.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Line", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        If Bind.Item("Proses").ToString = "Kirim" Then
+        If Bind.Item("Proses").ToString = "Kirim" OrElse Bind.Item("Proses").ToString = "Terima" Then
             Me.LBProses.Text = "PROSES : " & Bind.Item("Proses").ToString
             Me.LBLine.Text = Bind.Item("Line").ToString
         Else
