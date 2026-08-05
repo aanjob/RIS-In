@@ -335,7 +335,7 @@ Public Class FHslProd_i
                                 Exit Sub
                             End If
                         Else
-                            If Me.SLUProses.EditValue <> "Kirim" OrElse Me.SLUProses.EditValue <> "Terima" Then
+                            If Me.SLUProses.EditValue <> "Kirim" AndAlso Me.SLUProses.EditValue <> "Terima" Then
                                 FcMsgBox("Proses Pertama Belum Ada Saldo", "Error", MessageBoxIcon.Error)
                                 Exit Sub
                             Else
