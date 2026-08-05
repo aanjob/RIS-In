@@ -519,19 +519,6 @@ Public Class FHslProd_i
                         End If
                     End If
 
-                    Dim cmds As New SqlCommand("SPAftSScanBrcd")
-                    cmds.CommandType = CommandType.StoredProcedure
-
-                    With cmds
-                        .Connection = koneksi
-
-                        With koneksi
-                            .Open()
-                            cmds.ExecuteNonQuery()
-                            .Close()
-                        End With
-
-                    End With
 
                     FillDt(Me.SLUJam.EditValue)
 
