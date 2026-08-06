@@ -468,7 +468,7 @@ Public Class FHslProd_i
                     End If
 
                     Dim CekPros As Integer
-                   
+
                     CekPros = 0
                     If CekPros > 0 Then
 
@@ -660,7 +660,7 @@ Public Class FHslProd_i
         End If
         'update alam
 
-       
+
     End Sub
 
     Private Sub GridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles GridView1.KeyDown
