@@ -9,7 +9,7 @@ Public Class XRFtBebas_SJ
     Dim cmsl As SqlDataAdapter
     Dim SumSbDisc As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
     Dim SumQtyP As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
-    Dim TotDisc, TotPPn, TotAkhir, TotP, TotD As Decimal
+    Dim TotDisc, TotPPn, TotAkhir, TotP, TotD, TotAk As Decimal
 
     Public Sub InitializeData(ByVal Bind As Collection)
         'cmsl = New SqlDataAdapter("Select Nama,Qty,Sat,HarSat,HarSbDisc,DiscRp,DiscP,RpDiscP,HarAkhir From T_JualBebas_SJDtl Where JualID='" & Bind.Item("Kode").ToString & "'", koneksi)
@@ -50,7 +50,7 @@ Public Class XRFtBebas_SJ
 
         'Me.LBTotDisc.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotDisc)
         'Me.LBPPn.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotPPn)
-        'Me.LBGrandTot.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotAkhir)
+        Me.LBTotAk.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotAkhir)
         'Me.LBSumQty.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotQty)
         'Me.LBTotP.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotP)
         'Me.LBTotD.Text = String.Format("{0:#,##0.00;(#,##0.00);""}", TotD)
@@ -61,7 +61,8 @@ Public Class XRFtBebas_SJ
         Me.LBQtyP.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.Qty")})
         'Me.LBSize.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.QtyD")})
         Me.LBTotP3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.TotPP")})
-        'Me.LBTotD.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.TotD")})
+        Me.LBHarsat.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.Harsat", "{0:n2}")})
+        Me.LBHartot.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.Harakhir", "{0:n2}")})
         'Me.LBTotP2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.TotPP")})
         'Me.LBHarSat.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "T_JualBebasDtl.HarSat", "{0:n2}")})
 
