@@ -28,6 +28,7 @@ Partial Class FFtBebas_SJ
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl3 = New DevExpress.XtraLayout.LayoutControl()
+        Me.TBCustomer = New System.Windows.Forms.TextBox()
         Me.TBPersenPPn = New DevExpress.XtraEditors.TextEdit()
         Me.TBKode = New DevExpress.XtraEditors.TextEdit()
         Me.CBOKat = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -53,13 +54,14 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem24 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem32 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem33 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem24 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
         Me.TBLC = New DevExpress.XtraEditors.TextEdit()
@@ -182,8 +184,6 @@ Partial Class FFtBebas_SJ
         Me.BVBPrint = New DevExpress.XtraBars.Ribbon.BackstageViewButtonItem()
         Me.BVBExit = New DevExpress.XtraBars.Ribbon.BackstageViewButtonItem()
         Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.TBCustomer = New System.Windows.Forms.TextBox()
-        Me.LayoutControlItem33 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.BackstageViewControl1.SuspendLayout()
         Me.BackstageViewClientControl1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,13 +219,14 @@ Partial Class FFtBebas_SJ
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl4.SuspendLayout()
@@ -292,7 +293,6 @@ Partial Class FFtBebas_SJ
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BackstageViewControl1
@@ -386,6 +386,13 @@ Partial Class FFtBebas_SJ
         Me.LayoutControl3.Size = New System.Drawing.Size(913, 143)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
+        '
+        'TBCustomer
+        '
+        Me.TBCustomer.Location = New System.Drawing.Point(296, 12)
+        Me.TBCustomer.Name = "TBCustomer"
+        Me.TBCustomer.Size = New System.Drawing.Size(186, 20)
+        Me.TBCustomer.TabIndex = 46
         '
         'TBPersenPPn
         '
@@ -515,7 +522,7 @@ Partial Class FFtBebas_SJ
         Me.MKet.EditValue = ""
         Me.MKet.Location = New System.Drawing.Point(791, 36)
         Me.MKet.Name = "MKet"
-        Me.MKet.Size = New System.Drawing.Size(187, 78)
+        Me.MKet.Size = New System.Drawing.Size(187, 95)
         Me.MKet.StyleController = Me.LayoutControl3
         Me.MKet.TabIndex = 9
         Me.MKet.UseOptimizedRendering = True
@@ -528,7 +535,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem23, Me.LayoutControlItem3, Me.EmptySpaceItem23, Me.EmptySpaceItem25, Me.EmptySpaceItem27, Me.EmptySpaceItem5, Me.EmptySpaceItem12, Me.LayoutControlItem6, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem13, Me.EmptySpaceItem3, Me.LayoutControlItem32, Me.EmptySpaceItem13, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.LayoutControlItem33, Me.EmptySpaceItem24})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1000, 126)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1000, 143)
         Me.LayoutControlGroup3.Text = "LayoutControlGroup3"
         Me.LayoutControlGroup3.TextVisible = False
         '
@@ -577,7 +584,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem3.CustomizationFormText = "Kategori"
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(200, 34)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(200, 51)
         Me.LayoutControlItem3.Text = "Kategori"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(56, 13)
         '
@@ -589,7 +596,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem23.MaxSize = New System.Drawing.Size(25, 0)
         Me.EmptySpaceItem23.MinSize = New System.Drawing.Size(25, 24)
         Me.EmptySpaceItem23.Name = "EmptySpaceItem23"
-        Me.EmptySpaceItem23.Size = New System.Drawing.Size(25, 106)
+        Me.EmptySpaceItem23.Size = New System.Drawing.Size(25, 123)
         Me.EmptySpaceItem23.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem23.Text = "EmptySpaceItem23"
         Me.EmptySpaceItem23.TextSize = New System.Drawing.Size(0, 0)
@@ -612,7 +619,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem27.MaxSize = New System.Drawing.Size(25, 0)
         Me.EmptySpaceItem27.MinSize = New System.Drawing.Size(25, 24)
         Me.EmptySpaceItem27.Name = "EmptySpaceItem27"
-        Me.EmptySpaceItem27.Size = New System.Drawing.Size(25, 106)
+        Me.EmptySpaceItem27.Size = New System.Drawing.Size(25, 123)
         Me.EmptySpaceItem27.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem27.Text = "EmptySpaceItem27"
         Me.EmptySpaceItem27.TextSize = New System.Drawing.Size(0, 0)
@@ -625,7 +632,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem5.MaxSize = New System.Drawing.Size(25, 0)
         Me.EmptySpaceItem5.MinSize = New System.Drawing.Size(25, 24)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(25, 106)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(25, 123)
         Me.EmptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
@@ -636,7 +643,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem12.CustomizationFormText = "EmptySpaceItem12"
         Me.EmptySpaceItem12.Location = New System.Drawing.Point(970, 0)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 106)
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 123)
         Me.EmptySpaceItem12.Text = "EmptySpaceItem12"
         Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -647,7 +654,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem6.Location = New System.Drawing.Point(720, 24)
         Me.LayoutControlItem6.MinSize = New System.Drawing.Size(73, 20)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(250, 82)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(250, 99)
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Keterangan"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(56, 13)
@@ -660,7 +667,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(180, 24)
         Me.LayoutControlItem4.MinSize = New System.Drawing.Size(180, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(300, 34)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(300, 51)
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "Kota"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(56, 13)
@@ -677,16 +684,6 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem5.Text = "Alamat"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(56, 13)
-        '
-        'EmptySpaceItem24
-        '
-        Me.EmptySpaceItem24.AllowHotTrack = False
-        Me.EmptySpaceItem24.CustomizationFormText = "EmptySpaceItem24"
-        Me.EmptySpaceItem24.Location = New System.Drawing.Point(525, 0)
-        Me.EmptySpaceItem24.Name = "EmptySpaceItem24"
-        Me.EmptySpaceItem24.Size = New System.Drawing.Size(10, 106)
-        Me.EmptySpaceItem24.Text = "EmptySpaceItem24"
-        Me.EmptySpaceItem24.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem13
         '
@@ -709,7 +706,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Location = New System.Drawing.Point(680, 72)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(15, 34)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(15, 51)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -721,7 +718,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem32.MaxSize = New System.Drawing.Size(120, 24)
         Me.LayoutControlItem32.MinSize = New System.Drawing.Size(120, 24)
         Me.LayoutControlItem32.Name = "LayoutControlItem32"
-        Me.LayoutControlItem32.Size = New System.Drawing.Size(120, 34)
+        Me.LayoutControlItem32.Size = New System.Drawing.Size(120, 51)
         Me.LayoutControlItem32.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem32.Text = "% PPn"
         Me.LayoutControlItem32.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize
@@ -766,11 +763,31 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem12.TextToControlDistance = 0
         Me.LayoutControlItem12.TextVisible = False
         '
+        'LayoutControlItem33
+        '
+        Me.LayoutControlItem33.Control = Me.TBCustomer
+        Me.LayoutControlItem33.CustomizationFormText = "Customer"
+        Me.LayoutControlItem33.Location = New System.Drawing.Point(225, 0)
+        Me.LayoutControlItem33.Name = "LayoutControlItem33"
+        Me.LayoutControlItem33.Size = New System.Drawing.Size(249, 24)
+        Me.LayoutControlItem33.Text = "Customer"
+        Me.LayoutControlItem33.TextSize = New System.Drawing.Size(56, 13)
+        '
+        'EmptySpaceItem24
+        '
+        Me.EmptySpaceItem24.AllowHotTrack = False
+        Me.EmptySpaceItem24.CustomizationFormText = "EmptySpaceItem24"
+        Me.EmptySpaceItem24.Location = New System.Drawing.Point(525, 0)
+        Me.EmptySpaceItem24.Name = "EmptySpaceItem24"
+        Me.EmptySpaceItem24.Size = New System.Drawing.Size(10, 123)
+        Me.EmptySpaceItem24.Text = "EmptySpaceItem24"
+        Me.EmptySpaceItem24.TextSize = New System.Drawing.Size(0, 0)
+        '
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl4)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(913, 116)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(913, 143)
         Me.XtraTabPage2.Text = "KITE"
         '
         'LayoutControl4
@@ -785,7 +802,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControl4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl4.Name = "LayoutControl4"
         Me.LayoutControl4.Root = Me.LayoutControlGroup4
-        Me.LayoutControl4.Size = New System.Drawing.Size(913, 116)
+        Me.LayoutControl4.Size = New System.Drawing.Size(913, 143)
         Me.LayoutControl4.TabIndex = 0
         Me.LayoutControl4.Text = "LayoutControl4"
         '
@@ -859,7 +876,7 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem11, Me.LayoutControlItem26, Me.LayoutControlItem27, Me.LayoutControlItem28, Me.EmptySpaceItem20, Me.EmptySpaceItem10, Me.LayoutControlItem29, Me.LayoutControlItem30, Me.LayoutControlItem31})
         Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(913, 116)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(913, 143)
         Me.LayoutControlGroup4.Text = "LayoutControlGroup4"
         Me.LayoutControlGroup4.TextVisible = False
         '
@@ -918,7 +935,7 @@ Partial Class FFtBebas_SJ
         Me.EmptySpaceItem20.CustomizationFormText = "EmptySpaceItem20"
         Me.EmptySpaceItem20.Location = New System.Drawing.Point(0, 72)
         Me.EmptySpaceItem20.Name = "EmptySpaceItem20"
-        Me.EmptySpaceItem20.Size = New System.Drawing.Size(893, 24)
+        Me.EmptySpaceItem20.Size = New System.Drawing.Size(893, 51)
         Me.EmptySpaceItem20.Text = "EmptySpaceItem20"
         Me.EmptySpaceItem20.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -2127,23 +2144,6 @@ Partial Class FFtBebas_SJ
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(56, 13)
         Me.LayoutControlItem24.TextToControlDistance = 5
         '
-        'TBCustomer
-        '
-        Me.TBCustomer.Location = New System.Drawing.Point(296, 12)
-        Me.TBCustomer.Name = "TBCustomer"
-        Me.TBCustomer.Size = New System.Drawing.Size(186, 20)
-        Me.TBCustomer.TabIndex = 46
-        '
-        'LayoutControlItem33
-        '
-        Me.LayoutControlItem33.Control = Me.TBCustomer
-        Me.LayoutControlItem33.CustomizationFormText = "Customer"
-        Me.LayoutControlItem33.Location = New System.Drawing.Point(225, 0)
-        Me.LayoutControlItem33.Name = "LayoutControlItem33"
-        Me.LayoutControlItem33.Size = New System.Drawing.Size(249, 24)
-        Me.LayoutControlItem33.Text = "Customer"
-        Me.LayoutControlItem33.TextSize = New System.Drawing.Size(56, 13)
-        '
         'FFtBebas_SJ
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2191,13 +2191,14 @@ Partial Class FFtBebas_SJ
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem24, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl4.ResumeLayout(False)
@@ -2264,7 +2265,6 @@ Partial Class FFtBebas_SJ
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
